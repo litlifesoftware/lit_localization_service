@@ -1,8 +1,8 @@
 name: lit_localization_service
-description: A new Flutter package project.
+description: A Flutter package to enable localizations using JSON files.
 version: 0.0.1
 author: LitLifeSoftware
-homepage: https://litlifesoftware.github.io
+homepage: https://github.com/litlifesoftware/lit_localization_service
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

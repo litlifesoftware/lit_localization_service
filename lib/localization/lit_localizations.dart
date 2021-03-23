@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:lit_localization_service/controller/lit_localization_controller.dart';
 
 /// A controller class loading the JSON file content and enabling to get a specific
