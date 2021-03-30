@@ -20,24 +20,22 @@ Reading essential values like texts from local storage will require a status che
 
 - Provide a JSON file containing all localized strings in a predefined structure (Vide infra).
 - Include the JSON file asset on your `pubspec.yaml` file of your app.
-
 ```yaml
 assets:
   - assets/json/
 ```
 
 - Include `lit_localization_service` as git dependency on your `pubspec.yaml` file of your app:
-
-```yaml
-lit_localization_service:
-```
-
-or as a pub dependency:
-
 ```yaml
 lit_localization_service:
   git: https://github.com/litlifesoftware/lit_localization_service.git
 ```
+
+or as a pub dependency:
+```yaml
+lit_localization_service:
+```
+
 
 - Set the `localizationsDelegates` property value of your `MaterialApp` by initializing the `LitLocalizationServiceDelegate`. Provide your JSON file's location.
 
