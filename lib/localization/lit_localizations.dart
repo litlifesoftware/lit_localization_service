@@ -20,7 +20,7 @@ class LitLocalizations {
   /// The arguments are provided by the [LitLocalizationServiceDelegate].
   const LitLocalizations(
     this.locale, {
-    @required this.jsonAssetURL,
+    required this.jsonAssetURL,
     this.debug = false,
   });
 
@@ -29,7 +29,7 @@ class LitLocalizations {
   /// This will be required to store one [LitLocalizations] instance exclusively
   /// in runtime. In order to retrieve a localized string use the [getLocalizedValue]
   /// method.
-  static LitLocalizations of(BuildContext context) {
+  static LitLocalizations? of(BuildContext context) {
     return Localizations.of<LitLocalizations>(context, LitLocalizations);
   }
 
@@ -45,13 +45,13 @@ class LitLocalizations {
   /// States whether the retrieved JSON content has an error by checking if the initalized
   /// map has been modified.
   bool get _hasError {
-    return _localizationController.localizedString.isEmpty;
+    return _localizationController.localizedString!.isEmpty;
   }
 
   /// States whether the provided key does link to an implemented key-value-pair in the JSON
   /// file.
   bool _keyValueImplemented(String key) {
-    bool keyImplemented = _localizationController.localizedString[key] != null;
+    bool keyImplemented = _localizationController.localizedString![key] != null;
 
     return keyImplemented;
   }
@@ -59,7 +59,7 @@ class LitLocalizations {
   /// States whether the provided key does link to an implemented language in the JSON
   /// file.
   bool _languageImplemented(String key) {
-    bool languageImplemented = _localizationController.localizedString[key]
+    bool languageImplemented = _localizationController.localizedString![key]
             [locale.languageCode] !=
         null;
 
@@ -93,7 +93,7 @@ class LitLocalizations {
         if (_languageImplemented(key)) {
           // The localized value will always be wrapped inside a string object to avoid any
           // exceptions to be displayed on the UI.
-          return "${_localizationController.localizedString[key][locale.languageCode]}";
+          return "${_localizationController.localizedString![key][locale.languageCode]}";
         } else {
           if (debug) {
             print(

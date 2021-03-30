@@ -29,10 +29,10 @@ class LitLocalizationController {
   });
 
   /// Contains a local copy of the ``JSON`` content.
-  static Map<String, dynamic> _localizedStrings = Map<String, dynamic>();
+  static Map<String, dynamic>? _localizedStrings = Map<String, dynamic>();
 
   /// Returns the ``JSON`` content stored on inside a [Map].
-  Map<String, dynamic> get localizedString {
+  Map<String, dynamic>? get localizedString {
     return _localizedStrings;
   }
 

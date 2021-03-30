@@ -51,8 +51,8 @@ class LitLocalizationServiceDelegate
   ///   in the JSON file. This list should match the localizationsDelegates's
   ///   supportedLocales list specified on your [MaterialApp]/[CupertinoApp].
   const LitLocalizationServiceDelegate({
-    @required this.jsonAssetURL,
-    @required this.supportedLanguages,
+    required this.jsonAssetURL,
+    required this.supportedLanguages,
     this.debug = false,
   });
 
